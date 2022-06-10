@@ -1,0 +1,37 @@
+
+
+<h2>Hero Collection</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h3> Get Heroes</h3>
+      <button class="btn btn-primary" (click)="getHeroes()">Get</button>
+
+      <h3> Get Heroes By ID</h3>
+      <button class="btn btn-primary" (click)="getHeroByID(1)">Get</button>
+
+      <h3> Post Hero</h3>
+      <button class="btn btn-primary" (click)="addHero()">Post</button>
+
+      <h3> Update Hero</h3>
+      <button class="btn btn-primary" (click)="updateHero()">Put</button>
+
+      <h3> Delete Hero</h3>
+      <button class="btn btn-primary" (click)="deleteHero(10)">Delete</button>
+    </div>
+    <div class="col-md-8">
+      <div *ngFor="let post of posts">
+        <div class="container-fluid">
+        <h2>{{post.name}}</h2>
+        <p>{{post.power}}</p>
+        <hr>
+      </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <h3>Try me</h3>
+      {{oneHero.name}}
+      {{oneHero.power}}
+    </div> 
+  </div>
+</div>
