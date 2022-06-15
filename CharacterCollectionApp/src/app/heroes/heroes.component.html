@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <h3> Get Heroes</h3>
+        <button class="btn btn-primary" (click)="getHeroes()">Get</button>
+        <hr>
+        <app-hero-form-group type="get" title="Get Hero By ID" buttonText="Get" (heroChange)="getHeroByID($event)"></app-hero-form-group>
+        <div class="col-md-12">
+          <div *ngFor="let heroItem of heroes">
+            <div class="container-fluid">
+              <h4>{{heroItem.name}}</h4>
+              <p>{{heroItem.power}}</p>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <h3>{{hero.name}}</h3> <br>
+          {{hero.power}}
+        </div>
+      </div>
+
+      <div class="col-md-3">
+   <app-hero-form-group type="post" title="Add Hero" buttonText="Add" (heroChange)="postHero($event)"></app-hero-form-group>   
+      </div>
+
+      <div class="col-md-3">
+      <app-hero-form-group type="put" title="Update Hero" buttonText="Update" (heroChange)="putHero($event)"></app-hero-form-group>  
+      </div>
+      
+      <div class="col-md-3">
+        <app-hero-form-group type="delete" title="Delete Hero" buttonText="Delete" (heroChange)="deleteHero($event)"></app-hero-form-group>      
+      </div>
+    </div>
+  </div>
+  
+  
