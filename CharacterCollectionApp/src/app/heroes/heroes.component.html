@@ -8,15 +8,15 @@
         <div class="col-md-12">
           <div *ngFor="let heroItem of heroes">
             <div class="container-fluid">
-              <h4>{{heroItem.name}}</h4>
-              <p>{{heroItem.power}}</p>
+              <h3>Name: {{heroItem.name}}</h3>
+              <h5>Power: {{heroItem.power}}</h5>
               <hr>
             </div>
           </div>
         </div>
         <div class="col-md-12">
           <h3>{{hero.name}}</h3> <br>
-          {{hero.power}}
+          <h5>{{numToString}}</h5>
         </div>
       </div>
 

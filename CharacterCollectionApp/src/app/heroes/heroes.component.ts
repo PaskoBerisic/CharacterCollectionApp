@@ -11,15 +11,15 @@ const API_URL = "https://localhost:44352/api/Hero/"
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
- // Get
  heroes: any[] = [];
 
- // Get ID
  hero: Hero = {
    id: undefined,
    name: '',
    power: undefined
  }
+ numToString: string = '';
+  
 
  postId: any;
  constructor(private http: HttpClient, private characterCollectionservice: CharacterCollectionService) {}
@@ -33,7 +33,7 @@ export class HeroesComponent implements OnInit {
    //     this.heroes = heroes;
    //     console.log(heroes);
    //   });
-   this.characterCollectionservice.getHeroes()
+   this.characterCollectionservice.getCharacters('Hero')
    .subscribe((heroes: any) => {
           this.heroes = heroes;
           console.log(heroes);
@@ -45,6 +45,8 @@ export class HeroesComponent implements OnInit {
    this.http.get(API_URL + hero.id)
      .subscribe((hero: any) => {
        this.hero = hero;
+       this.hero.name = 'Name: ' + this.hero.name;
+       this.numToString = 'Power: ' + this.hero.power;
        console.log(this.hero);
      });
  }

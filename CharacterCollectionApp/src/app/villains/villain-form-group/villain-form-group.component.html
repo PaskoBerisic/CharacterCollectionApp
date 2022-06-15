@@ -1,0 +1,18 @@
+<h3> {{title}} </h3>
+<div class="form-group" *ngIf="type == 'put' || type == 'delete' || type=='get' ">
+  <label for="id"> Villain ID* </label>
+  <input type="text" class="form-control" id="id" required [(ngModel)]="villain.id" name="id" />
+</div>
+<div class="form-group" *ngIf="type == 'post' || type =='put'">
+  <label for="name"> Villain Name </label>
+  <input type="text" class="form-control" id="name" [(ngModel)]="villain.name" name="name" />
+</div>
+<div class="form-group" *ngIf="type == 'post' || type =='put' ">
+  <label for="power"> Villain Power </label>
+  <input type="text" class="form-control" id="power" [(ngModel)]="villain.power" name="power" />
+</div>
+<div class="form-group" *ngIf="type == 'post' || type =='put' ">
+  <label for="power"> Villain Weakness </label>
+  <input type="text" class="form-control" id="weakness" [(ngModel)]="villain.weakness" name="weakness" />
+</div>
+<button class="btn btn-primary" (click)="onAction()">{{buttonText}}</button>
