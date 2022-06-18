@@ -10,6 +10,7 @@ import { HeroFormGroupComponent } from './heroes/hero-form-group/hero-form-group
 import { VillainsComponent } from './villains/villains.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VillainFormGroupComponent } from './villains/villain-form-group/villain-form-group.component';
+import { CharacterDetailComponent } from './character-detail/character-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { VillainFormGroupComponent } from './villains/villain-form-group/villain
   HeroFormGroupComponent,
   VillainsComponent,
   DashboardComponent,
-  VillainFormGroupComponent
+  VillainFormGroupComponent,
+  CharacterDetailComponent
   ],
   imports: [
     BrowserModule,

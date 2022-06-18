@@ -19,10 +19,9 @@ export class HeroesComponent implements OnInit {
    power: undefined
  }
  numToString: string = '';
-  
-
  postId: any;
- constructor(private http: HttpClient, private characterCollectionservice: CharacterCollectionService) {}
+ flag: boolean = false;
+ constructor(private http: HttpClient, private characterCollectionService: CharacterCollectionService) {}
 
  ngOnInit(): void {}
 
@@ -33,7 +32,7 @@ export class HeroesComponent implements OnInit {
    //     this.heroes = heroes;
    //     console.log(heroes);
    //   });
-   this.characterCollectionservice.getCharacters('Hero')
+   this.characterCollectionService.getCharacters('Hero')
    .subscribe((heroes: any) => {
           this.heroes = heroes;
           console.log(heroes);
@@ -53,10 +52,18 @@ export class HeroesComponent implements OnInit {
 
  // Post
  postHero(addHero: Hero) {
-   this.http.post < any > (API_URL, addHero).subscribe(data => {
-     this.postId = data.id;
-   });
- }
+  this.flag = false;
+  this.http.post < any > (API_URL, addHero)
+    .subscribe(response => {
+    console.log(response);  
+    if(response != null)
+    {
+      console.log(response);
+      this.flag = true;
+      console.log(this.flag);
+    };
+    });
+  }
 
  // Put
  putHero(updateHero: Hero) {

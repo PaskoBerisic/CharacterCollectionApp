@@ -33,7 +33,6 @@ export class CharacterCollectionService {
   delCharacter: Character = {
     id: undefined
   }
-
   postId: any;
   constructor(private http: HttpClient) {}
 
@@ -52,10 +51,14 @@ export class CharacterCollectionService {
   }
 
    //Post
-   postCharacter() {
-    this.http.post < any > (API_URL, this.addCharacter).subscribe(data => {
-      this.postId = data.id;
-    });
+  //  postCharacter() {
+  //   this.http.post < any > (API_URL, this.addCharacter).
+  //   subscribe(data => { this.postId = data.id;});
+  //   console.log(this.addCharacter);
+  // }
+
+  postCharacter() {
+    return this.http.post < any > (API_URL, this.addCharacter)
   }
 
    //Put

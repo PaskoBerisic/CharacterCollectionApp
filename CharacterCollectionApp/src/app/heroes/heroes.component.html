@@ -10,6 +10,7 @@
             <div class="container-fluid">
               <h3>Name: {{heroItem.name}}</h3>
               <h5>Power: {{heroItem.power}}</h5>
+              <button class="btn btn-primary" routerLink={{heroItem.name}}>Details</button>
               <hr>
             </div>
           </div>
@@ -21,7 +22,7 @@
       </div>
 
       <div class="col-md-3">
-   <app-hero-form-group type="post" title="Add Hero" buttonText="Add" (heroChange)="postHero($event)"></app-hero-form-group>   
+  <app-hero-form-group type="post" title="Add Hero" buttonText="Add" [flag]="flag" (heroChange)="postHero($event)"></app-hero-form-group>   
       </div>
 
       <div class="col-md-3">
