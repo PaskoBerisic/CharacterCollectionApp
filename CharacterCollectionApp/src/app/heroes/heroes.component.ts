@@ -11,18 +11,17 @@ const API_URL = "https://localhost:44352/api/Hero/"
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
- // Get
  heroes: any[] = [];
 
- // Get ID
  hero: Hero = {
    id: undefined,
    name: '',
    power: undefined
  }
-
+ numToString: string = '';
  postId: any;
- constructor(private http: HttpClient, private characterCollectionservice: CharacterCollectionService) {}
+ flag: boolean = false;
+ constructor(private http: HttpClient, private characterCollectionService: CharacterCollectionService) {}
 
  ngOnInit(): void {}
 
@@ -33,7 +32,7 @@ export class HeroesComponent implements OnInit {
    //     this.heroes = heroes;
    //     console.log(heroes);
    //   });
-   this.characterCollectionservice.getHeroes()
+   this.characterCollectionService.getCharacters('Hero')
    .subscribe((heroes: any) => {
           this.heroes = heroes;
           console.log(heroes);
@@ -45,16 +44,26 @@ export class HeroesComponent implements OnInit {
    this.http.get(API_URL + hero.id)
      .subscribe((hero: any) => {
        this.hero = hero;
+       this.hero.name = 'Name: ' + this.hero.name;
+       this.numToString = 'Power: ' + this.hero.power;
        console.log(this.hero);
      });
  }
 
  // Post
  postHero(addHero: Hero) {
-   this.http.post < any > (API_URL, addHero).subscribe(data => {
-     this.postId = data.id;
-   });
- }
+  this.flag = false;
+  this.http.post < any > (API_URL, addHero)
+    .subscribe(response => {
+    console.log(response);  
+    if(response != null)
+    {
+      console.log(response);
+      this.flag = true;
+      console.log(this.flag);
+    };
+    });
+  }
 
  // Put
  putHero(updateHero: Hero) {

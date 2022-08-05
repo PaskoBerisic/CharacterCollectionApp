@@ -1,0 +1,40 @@
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <h3> Get Villains</h3>
+        <button class="btn btn-primary" (click)="getVillains()">Get</button>
+        <hr>
+        <app-villain-form-group type="get" title="Get Villain By ID" buttonText="Get" (villainChange)="getVillainByID($event)"></app-villain-form-group>
+        <div class="col-md-12">
+          <div *ngFor="let villainItem of villains">
+            <div class="container-fluid">
+              <h3>Name: {{villainItem.name}}</h3>
+              <h5>Power: {{villainItem.power}}</h5>
+              <h5>Weak against: {{villainItem.weakness}}</h5>
+              <hr>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <h3>{{villain.name}}</h3> <br>
+          <h5>{{numToString}}</h5>
+          <h5>{{villain.weakness}}</h5>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <app-villain-form-group type="post" title="Add Villain" buttonText="Add" (villainChange)="postVillain($event)"></app-villain-form-group>   
+      </div>
+
+      <div class="col-md-3">
+        <app-villain-form-group type="put" title="Update Villain" buttonText="Update" (villainChange)="putVillain($event)"></app-villain-form-group>  
+      </div>
+      
+      <div class="col-md-3">
+        <app-villain-form-group type="delete" title="Delete Villain" buttonText="Delete" (villainChange)="deleteVillain($event)"></app-villain-form-group>      
+      </div>
+    </div>
+  </div>
+  
+  

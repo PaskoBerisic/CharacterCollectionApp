@@ -1,72 +1,74 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Hero } from 'src/models/hero.model';
+import { Character } from 'src/models/character.model';
 import { Observable } from 'rxjs';
 
-const API_URL = "https://localhost:44352/api/Hero/";
+const API_URL = "https://localhost:44352/api/";
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterCollectionService {
   // Get
-  heroes: any[] = [];
+  characters: any[] = [];
 
   // Get ID
-  getHero: any = {
+  getCharacter: any = {
     name: '',
     power: null
   }
 
   // Post
-  addHero: Hero = {
+  addCharacter: Character = {
     name: "",
     power: undefined
   };
 
   // Put
-  updateHero: Hero = {
+  updateCharacter: Character = {
     name: "",
     power: undefined
   };
 
   // Delete
-  delHero: Hero = {
+  delCharacter: Character = {
     id: undefined
   }
-
   postId: any;
   constructor(private http: HttpClient) {}
 
    //Get
-   getHeroes(): Observable<Hero> {
-    return this.http.get(API_URL + 'all').pipe();
+   getCharacters(path: string): Observable<Character> {
+    return this.http.get(API_URL + path + '/all').pipe();
   }
 
    //Get ID
-   getHeroByID(id: any) {
+   getCharacterByID(id: any) {
     this.http.get(API_URL + id) 
-      .subscribe((hero: any) => {
-        this.getHero = hero;
-        console.log(this.getHero);
+      .subscribe((character: any) => {
+        this.getCharacter = character;
+        console.log(this.getCharacter);
       });
   }
 
    //Post
-   
-   postHero() {
-    this.http.post < any > (API_URL, this.addHero).subscribe(data => {
-      this.postId = data.id;
-    });
+  //  postCharacter() {
+  //   this.http.post < any > (API_URL, this.addCharacter).
+  //   subscribe(data => { this.postId = data.id;});
+  //   console.log(this.addCharacter);
+  // }
+
+  postCharacter() {
+    return this.http.post < any > (API_URL, this.addCharacter)
   }
 
    //Put
-   putHero() {
-    this.http.put < any > (API_URL, this.updateHero)
+   putCharacter() {
+    this.http.put < any > (API_URL, this.updateCharacter)
       .subscribe(data => this.postId = data.id);
   }
 
    //Delete ID
-   deleteHero(id: any) {
+   deleteCharacter(id: any) {
     this.http.delete(API_URL + id)
       .subscribe(() => console.log('Delete successful'));
   }
