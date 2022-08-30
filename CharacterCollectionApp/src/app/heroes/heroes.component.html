@@ -1,38 +1,51 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-3">
-        <h3> Get Heroes</h3>
-        <button class="btn btn-primary" (click)="getHeroes()">Get</button>
-        <hr>
-        <app-hero-form-group type="get" title="Get Hero By ID" buttonText="Get" (heroChange)="getHeroByID($event)"></app-hero-form-group>
-        <div class="col-md-12">
-          <div *ngFor="let heroItem of heroes">
-            <div class="container-fluid">
-              <h3>Name: {{heroItem.name}}</h3>
-              <h5>Power: {{heroItem.power}}</h5>
-              <button class="btn btn-primary" routerLink={{heroItem.name}}>Details</button>
-              <hr>
+  <div class="row">
+    <div *ngFor="let heroItem of heroes">
+      <div class="col">
+        <div class="card shadow-sm">
+          <svg class="bd-placeholder-img card-img-top" width="100%" height="50px" xmlns="http://www.w3.org/2000/svg"
+            role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
+              dy=".3em"></text>
+          </svg>
+          <div class="card-body">
+          <h3>{{heroItem.name}}</h3>
+          <p>{{heroItem.power}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"
+                  (click)="deleteHero(hero.id)">Delete</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">See
+                  details</button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-12">
-          <h3>{{hero.name}}</h3> <br>
-          <h5>{{numToString}}</h5>
-        </div>
-      </div>
-
-      <div class="col-md-3">
-  <app-hero-form-group type="post" title="Add Hero" buttonText="Add" [flag]="flag" (heroChange)="postHero($event)"></app-hero-form-group>   
-      </div>
-
-      <div class="col-md-3">
-      <app-hero-form-group type="put" title="Update Hero" buttonText="Update" (heroChange)="putHero($event)"></app-hero-form-group>  
-      </div>
-      
-      <div class="col-md-3">
-        <app-hero-form-group type="delete" title="Delete Hero" buttonText="Delete" (heroChange)="deleteHero($event)"></app-hero-form-group>      
+        <br>
       </div>
     </div>
   </div>
-  
-  
+
+  <button class="btn btn-primary" (click)="showControls()">Show Controls</button>
+  <section id="control">
+  <div class="row">
+    <div class="col-md-3">
+      <app-hero-form-group type="get" title="Get Hero By ID" buttonText="Get" (heroChange)="getHeroByID($event)">
+      </app-hero-form-group>
+    </div>
+    <div class="col-md-3">
+      <app-hero-form-group type="post" title="Add Hero" buttonText="Add" [flag]="flag" (heroChange)="postHero($event)">
+      </app-hero-form-group>
+    </div>
+    <div class="col-md-3">
+      <app-hero-form-group type="put" title="Update Hero" buttonText="Update" (heroChange)="putHero($event)">
+      </app-hero-form-group>
+    </div>
+    <div class="col-md-3">
+      <app-hero-form-group type="delete" title="Delete Hero" buttonText="Delete" (heroChange)="deleteHero($event)">
+      </app-hero-form-group>
+    </div>
+  </div>
+</section>
+</div>

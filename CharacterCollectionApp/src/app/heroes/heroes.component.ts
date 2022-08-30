@@ -23,20 +23,17 @@ export class HeroesComponent implements OnInit {
  flag: boolean = false;
  constructor(private http: HttpClient, private characterCollectionService: CharacterCollectionService) {}
 
- ngOnInit(): void {}
+ ngOnInit(): void {
+  this.getHeroes();
+ }
 
  // Get
  getHeroes() {
-   // this.http.get(API_URL + 'all')
-   //   .subscribe((heroes: any) => {
-   //     this.heroes = heroes;
-   //     console.log(heroes);
-   //   });
    this.characterCollectionService.getCharacters('Hero')
    .subscribe((heroes: any) => {
           this.heroes = heroes;
           console.log(heroes);
- })
+ });
 }
 
  // Get ID
@@ -75,5 +72,10 @@ export class HeroesComponent implements OnInit {
  deleteHero(hero: Hero) {
    this.http.delete(API_URL + hero.id)
      .subscribe(() => console.log('Delete successful'));
+ }
+
+ showControls(){
+  var x = document.getElementById('control');
+    x.style.display = "block";
  }
 }

@@ -38,7 +38,7 @@ export class CharacterCollectionService {
 
    //Get
    getCharacters(path: string): Observable<Character> {
-    return this.http.get(API_URL + path + '/all').pipe();
+    return this.http.get(API_URL + path).pipe();
   }
 
    //Get ID
