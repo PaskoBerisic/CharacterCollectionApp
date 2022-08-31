@@ -15,4 +15,7 @@
   <label for="power"> Villain Weakness </label>
   <input type="text" class="form-control" id="weakness" [(ngModel)]="villain.weakness" name="weakness" />
 </div>
-<button class="btn btn-primary" (click)="onAction()">{{buttonText}}</button>
+<button *ngIf="type == 'get'" class="btn btn-primary" (click)="onAction()" >{{buttonText}}</button>
+<button *ngIf="type == 'post'" class="btn btn-success" (click)="onAction()">{{buttonText}}</button>
+<button *ngIf="type == 'put'" class="btn btn-warning" (click)="onAction()">{{buttonText}}</button>
+<button *ngIf="type == 'delete'" class="btn btn-danger" (click)="onAction()" >{{buttonText}}</button>

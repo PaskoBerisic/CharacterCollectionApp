@@ -24,7 +24,9 @@ export class VillainsComponent implements OnInit {
   postId: any;
   constructor(private http: HttpClient, private characterCollectionservice: CharacterCollectionService) {}
   
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getVillains();
+  }
   
   // Get
   getVillains() {
@@ -32,7 +34,7 @@ export class VillainsComponent implements OnInit {
     .subscribe((villains: any) => {
            this.villains = villains;
            console.log(villains);
-  })
+  });
   }
   
   // Get ID
@@ -43,7 +45,7 @@ export class VillainsComponent implements OnInit {
         this.villain.name = 'Name: ' + this.villain.name;
         this.numToString = 'Power: ' + this.villain.power;
         this.villain.weakness = 'Weak against: ' + this.villain.weakness;
-        console.log(this.villain);
+        alert(this.villain);
       });
   }
   

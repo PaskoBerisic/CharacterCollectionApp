@@ -54,11 +54,10 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -84,12 +83,10 @@ Database of all Marvel characters. Explore Marvel superheroes and villans in thi
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
@@ -124,6 +121,15 @@ This is an example of how to list things you need to use the software and how to
 Use the predefined database with some of the Marvel characters or even extend the database with new characters. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## Screenshots
+
+Image 1
+
+Image 2
+
+Image 3
 
 
 <!-- CONTRIBUTING -->
@@ -172,7 +178,7 @@ Project Link: [https://github.com/PaskoBerisic/CharacterCollectionApp](https://g
 [issues-shield]: https://img.shields.io/github/issues/PaskoBerisic/CharacterCollectionApp.svg?style=for-the-badge
 [issues-url]: https://github.com/PaskoBerisic/CharacterCollectionApp/issues
 [license-shield]: https://img.shields.io/github/license/PaskoBerisic/CharacterCollectionApp.svg?style=for-the-badge
-[license-url]: https://github.com/PaskoBerisic/CharacterCollectionAppmaster/LICENSE.txt
+[license-url]: https://github.com/PaskoBerisic/CharacterCollectionApp/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://hr.linkedin.com/in/pasko-berisic
 [product-screenshot]: images/screenshot.png
