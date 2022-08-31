@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div *ngFor="let heroItem of heroes">
+    <div *ngFor="let hero of heroes">
       <div class="col">
         <div class="card shadow-sm">
           <svg class="bd-placeholder-img card-img-top" width="100%" height="50px" xmlns="http://www.w3.org/2000/svg"
@@ -10,8 +10,8 @@
               dy=".3em"></text>
           </svg>
           <div class="card-body">
-          <h3>{{heroItem.name}}</h3>
-          <p>{{heroItem.power}}</p>
+          <h3>{{hero.name}}</h3>
+          <p>{{hero.power}}</p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-outline-secondary"
