@@ -125,13 +125,13 @@ Use the predefined database with some of the Marvel characters or even extend th
 
 ## Screenshots
 
-Landing Page
+### Landing Page
 ![landing](https://user-images.githubusercontent.com/37916092/187631170-5d7a2bcc-4743-4194-a224-78153a16a5f4.png)
 
-Heroes View
+### Heroes View
 ![heroes](https://user-images.githubusercontent.com/37916092/187631202-5b75cec0-cc8a-43e9-bf96-be4ad1130f0c.png)
 
-Villain View
+### Villain View
 ![villains](https://user-images.githubusercontent.com/37916092/187631220-094864c2-a177-4685-b9b7-e759f6701475.png)
 
 
